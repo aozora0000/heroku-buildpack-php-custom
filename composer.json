@@ -2,9 +2,15 @@
     "name": "aozora0000/heroku-buildpack-php-custom",
     "description": "MyCustomBuildPack",
     "keywords": ["heroku", "foreman", "php", "hhvm", "apache", "apache2", "nginx"],
-    "homepage": "http://github.com/heroku/heroku-buildpack-php",
+    "homepage": "http://github.com/aozora0000/heroku-buildpack-php-custom",
     "type": "library",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Kohei Kinoshita",
+            "email": "aozora0000@gmail.com"
+        }
+    ],
     "bin": [
         "bin/heroku-hhvm-apache2",
         "bin/heroku-hhvm-nginx",
