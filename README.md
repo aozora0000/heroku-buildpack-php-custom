@@ -21,7 +21,7 @@ If you also have files from other frameworks or languages that could trigger ano
 
 This will use the officially published version. To use the `master` branch from GitHub instead:
 
-    $ heroku buildpacks:set https://github.com/heroku/heroku-buildpack-php
+    $ heroku buildpacks:set https://github.com/aozora0000/heroku-buildpack-php-custom
 
 Please refer to [Dev Center](https://devcenter.heroku.com/categories/php) for further usage instructions.
 
@@ -52,4 +52,3 @@ Please submit all pull requests against `develop` as the base branch.
 ### Custom Platform Packages and Repositories
 
 Please refer to the [README in `support/build/`](support/build/README.md) for instructions.
-

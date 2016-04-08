@@ -233,7 +233,7 @@ unset COMPOSER_GITHUB_OAUTH_TOKEN
 # install dependencies unless composer.json is completely empty (in which case it'd talk to packagist.org which may be slow and is unnecessary)
 cat "$COMPOSER" | python -c 'import sys,json; sys.exit(not json.load(sys.stdin));' && composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction 2>&1 | indent
 
-composer show --installed heroku/heroku-buildpack-php &> /dev/null && error "Your '$COMPOSER' requires 'heroku/heroku-buildpack-php'.
+composer show --installed aozora0000/heroku-buildpack-php-custom &> /dev/null && error "Your '$COMPOSER' requires 'aozora0000/heroku-buildpack-php-custom'.
 This package may only be used as a dependency in 'require-dev'!"
 
 if cat "$COMPOSER" | python -c 'import sys,json; sys.exit("compile" not in json.load(sys.stdin).get("scripts", {}));'; then
@@ -253,7 +253,7 @@ mkdir -p "$build_dir/$hbpdir"
 cp -r "$bp_dir"/* "$build_dir/$hbpdir/"
 # make bin dir, just in case
 mkdir -p "$build_dir/$composer_bindir"
-# figure out shortest relative path from vendor/heroku/heroku-buildpack-php to vendor/bin (or whatever the bin dir is)
+# figure out shortest relative path from vendor/aozora0000/heroku-buildpack-php-custom to vendor/bin (or whatever the bin dir is)
 relbin=$(python -c "import os.path; print os.path.relpath('$hbpdir', '$composer_bindir')")
 # collect bin names from composer.json
 relbins=$(cat $bp_dir/composer.json | python -c 'from __future__ import print_function; import sys, json; { print(sys.argv[1]+"/"+bin) for bin in json.load(sys.stdin)["bin"] }' $relbin)
