@@ -125,6 +125,7 @@ the change, then push again."
 # they are also used in later install attempts for add-on extensions (blackfire, newrelic, ...)
 export export_file_path=$bp_dir/export
 export profile_dir_path=$build_dir/.profile.d
+composer global require "hirak/prestissimo"
 if composer install -d "$build_dir/.heroku/php" --no-dev 2>&1 | tee $build_dir/.heroku/php/install.log | grep --line-buffered -E '^  - (Instal|Enab)ling heroku-sys/' | sed -u -E -e 's/^  - (Instal|Enab)ling /- /' -e 's/heroku-sys\///g' | indent; then
     :
 else
